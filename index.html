@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Looqa - מראת סלפי אינטראקטיבית לאירועים. חוויה בלתי נשכחת עם צילום ללא הגבלה, עיצוב מותאם אישית ותוספות מדהימות לכל חבילה."
+    />
+    <meta
+      name="keywords"
+      content="Looqa, לוקה, מראת סלפי, צילום לאירועים, עמדת צילום, סלפי לאירוע, מראה אינטראקטיבית, מגנטים, חתונה, בר מצווה, בת מצווה"
+    />
+    <meta name="author" content="Looqa" />
+    <title>Looqa – מראת סלפי לאירועים</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function sendForm(event) {
+        event.preventDefault();
+        const name = document.querySelector(
+          'input[placeholder="שם מלא"]'
+        ).value;
+        const phone = document.querySelector(
+          'input[placeholder="טלפון"]'
+        ).value;
+        const details = document.querySelector(
+          'input[placeholder="סוג האירוע / תאריך"]'
+        ).value;
+        const url = `https://api.whatsapp.com/send?phone=972544338314&text=שלום! אני מעוניין בפרטים על Looqa.%0Aשם: ${name}%0Aטלפון: ${phone}%0Aפרטי אירוע: ${details}`;
+        window.open(url, '_blank');
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Heebo', sans-serif;
+        background: #fff;
+        color: #333;
+        direction: rtl;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      nav img.logo {
+        height: 50px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      nav ul li a:hover {
+        color: #6a11cb;
+      }
+      .phone-button {
+        background-color: #6a11cb;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      header {
+        background: linear-gradient(to left, #6a11cb, #2575fc);
+        color: #fff;
+        text-align: center;
+        padding: 80px 20px 60px;
+        background-size: cover;
+      }
+      .logo {
+        max-width: 160px;
+        display: block;
+      }
+      header h1 {
+        font-size: 3.5em;
+        margin: 0;
+      }
+      header p {
+        font-size: 1.4em;
+        margin-top: 10px;
+      }
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: #f0f0ff;
+      }
+      .hero button {
+        padding: 15px 40px;
+        font-size: 1em;
+        background: #6a11cb;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .hero button:hover {
+        background: #5011a1;
+      }
+      .packages {
+        padding: 60px 20px;
+        background: #f9f9ff;
+        text-align: center;
+      }
+      .packages h2 {
+        font-size: 2em;
+        color: #6a11cb;
+        margin-bottom: 30px;
+      }
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .package {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+      }
+      .package h3 {
+        color: #6a11cb;
+        font-size: 1.5em;
+      }
+      .package ul {
+        list-style: none;
+        padding: 0;
+        text-align: right;
+        margin-top: 15px;
+      }
+      .package ul li::before {
+        content: '✔';
+        margin-left: 8px;
+        color: #6a11cb;
+      }
+      .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: #25d366;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1em;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease;
+      }
+      .whatsapp-button:hover {
+        background-color: #1ebe5d;
+      }
+      .whatsapp-button::before {
+        content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+      }
+      .gallery {
+        padding: 60px 20px;
+        background: #fff0fa;
+        text-align: center;
+      }
+      .gallery h2 {
+        font-size: 2.2em;
+        color: #d63384;
+        margin-bottom: 30px;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .gallery img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .contact form {
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .contact input {
+        margin-bottom: 15px;
+        padding: 14px;
+        font-size: 1em;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .contact button {
+        background: #6a11cb;
+        color: #fff;
+        font-weight: bold;
+        padding: 14px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="tel:0544338314" class="phone-button">התקשרו עכשיו</a>
+      <ul>
+        <li><a href="#packages">חבילות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+      </ul>
+      <img src="/assets/logo.png" alt="Looqa Logo" class="logo" />
+    </nav>
+    <header>
+      <h1>Looqa</h1>
+      <p>Frame Your Vibe</p>
+    </header>
+
+    <section class="hero">
+      <p>מראת הסלפי האינטראקטיבית שמשדרגת כל אירוע</p>
+      <button
+        onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+      >
+        הזמינו את Looqa עכשיו
+      </button>
+    </section>
+
+    <section class="gallery">
+      <h2>הציצו לחוויה</h2>
+      <div class="gallery-grid">
+        <img
+          src="https://via.placeholder.com/400x300?text=Event+1"
+          alt="אירוע לדוגמה 1"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Event+2"
+          alt="אירוע לדוגמה 2"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Event+3"
+          alt="אירוע לדוגמה 3"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Event+4"
+          alt="אירוע לדוגמה 4"
+        />
+      </div>
+    </section>
+    <section class="packages" id="packages">
+      <h2>בחרו את החבילה שמתאימה לכם</h2>
+      <div class="packages-grid">
+        <div class="package">
+          <h3>Looqa Basic – ₪1,500</h3>
+          <ul>
+            <li>צילום ללא הגבלה</li>
+            <li>רקע מותאם אישית</li>
+            <li>סט אביזרים – ₪100</li>
+            <li>הדפסת מגנטים – ₪300</li>
+          </ul>
+          <a
+            class="whatsapp-button"
+            href="https://api.whatsapp.com/send?phone=972544338314&text=מעוניין בחבילת Looqa Basic"
+            >הזמינו את החבילה בוואטסאפ</a
+          >
+        </div>
+        <div class="package">
+          <h3>Looqa Glow – ₪1,900</h3>
+          <ul>
+            <li>כלול כמו Basic</li>
+            <li>עיצוב למסך</li>
+            <li>2 רקעים מתחלפים</li>
+            <li>סרטון Highlight – ₪250</li>
+          </ul>
+          <a
+            class="whatsapp-button"
+            href="https://api.whatsapp.com/send?phone=972544338314&text=מעוניין בחבילת Looqa Glow"
+            >הזמינו את החבילה בוואטסאפ</a
+          >
+        </div>
+        <div class="package">
+          <h3>Looqa Vibe Max – ₪2,500</h3>
+          <ul>
+            <li>כלול כמו Glow</li>
+            <li>עיצוב אישי למסך</li>
+            <li>ניהול תור דיגיטלי</li>
+            <li>מגנטים לכל האורחים</li>
+            <li>אלבום דיגיטלי אונליין – ₪200</li>
+          </ul>
+          <a
+            class="whatsapp-button"
+            href="https://api.whatsapp.com/send?phone=972544338314&text=מעוניין בחבילת Looqa Vibe Max"
+            >הזמינו את החבילה בוואטסאפ</a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="section contact" id="contact">
+      <h2>רוצים לדבר איתנו?</h2>
+      <p>השאירו פרטים ונחזור אליכם בהקדם</p>
+      <form onsubmit="sendForm(event)">
+        <input type="text" placeholder="שם מלא" required />
+        <input type="tel" placeholder="טלפון" required />
+        <input type="text" placeholder="סוג האירוע / תאריך" />
+        <button type="submit">שלחו לי פרטים</button>
+      </form>
+    </section>
+  </body>
+</html>
